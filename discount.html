@@ -51,6 +51,8 @@
         </div>
         <div class="modal-body">
           <p id="demo"></p>
+          <h5>You need to pay</h5>
+          <p id="amount"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -64,7 +66,7 @@
     function myFunction() {
       var x = document.getElementById('discount').value;
       var y = document.getElementById('total').value;
-      var d, m, a;
+      var d, m, a, pay;
       if (x > 100 || x < 0 || x == "") {
         document.getElementById('discountModal').disabled;
         alert("Please input correct % amount");
@@ -80,6 +82,8 @@
       m = y * d;
       a = y - m;
       document.getElementById('demo').innerHTML = m;
+      document.getElementById('amount').innerHTML = a;
+
     }
   </script>
 
