@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discount Calculator</title>
+  <link rel=" stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css " integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4 " crossorigin="anonymous ">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet " href="home.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1 class="weight padding-calculate">Calculate Discount</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="padding-calculate">
+          <form name="discountForm">
+            <div class="form-group">
+              <label for="email"> Enter the Discount in % </label>
+              <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="discount" min="0" max="100" required />
+            </div>
+            <div class="form-group">
+              <label for="pwd"> Enter the Total amount</label>
+              <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="total" required />
+            </div>
+            <button type="button" class="btn  btn-primary" onclick="myFunction()">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="discountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">The discounted amount is</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="demo"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    function validateForm() {
+      var x = document.forms["discountForm"]["discount"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+      }
+    }
+
+    function myFunction() {
+      var x = document.getElementById('discount').value;
+      var y = document.getElementById('total').value;
+      var d, m, a;
+      d = x / 100; //converting it to the point value;
+      m = y * d;
+      a = y - m;
+      document.getElementById('demo').innerHTML = m;
+    }
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+</html>
