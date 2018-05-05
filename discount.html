@@ -33,7 +33,7 @@
               <label for="pwd"> Enter the Total amount</label>
               <input type="number" onkeydown="javascript: return event.keyCode == 69 ? false : true" class="form-control" id="total" required />
             </div>
-            <button type="button" class="btn  btn-primary" onclick="myFunction()">Submit</button>
+            <button type="button" class="btn  btn-primary" onclick="myFunction()" data-toggle="modal" data-target="#discountModal">Submit</button>
           </form>
         </div>
       </div>
@@ -53,8 +53,7 @@
           <p id="demo"></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -67,6 +66,11 @@
       if (x == "") {
         alert("Name must be filled out");
         return false;
+      } else if (x > 100 || x < 0) {
+        alert("Enter the valid value");
+        return false;
+      } else {
+        return true;
       }
     }
 
