@@ -61,23 +61,21 @@
 
 
   <script type="text/javascript">
-    function validateForm() {
-      var x = document.forms["discountForm"]["discount"].value;
-      if (x == "") {
-        alert("Name must be filled out");
-        return false;
-      } else if (x > 100 || x < 0) {
-        alert("Enter the valid value");
-        return false;
-      } else {
-        return true;
-      }
-    }
-
     function myFunction() {
       var x = document.getElementById('discount').value;
       var y = document.getElementById('total').value;
       var d, m, a;
+      if (x > 100 || x < 0 || x == "") {
+        document.getElementById('discountModal').disabled;
+        alert("Please input correct % amount");
+        return false;
+      }
+      if (y == "") {
+        document.getElementById('discountModal'.disabled);
+        alert("Idiot Enter something to work");
+        return flase;
+      }
+
       d = x / 100; //converting it to the point value;
       m = y * d;
       a = y - m;
