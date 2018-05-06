@@ -1,1 +1,5 @@
-This is just a simple javascript discount calculator with the use of html. Nothing much to be said.
+# Discount calculator using javascript.
+#### This page uses html and javscript for the calculation and thats it. Nothing much.
+
+[Check out yourself] (https://www.google.com)
+
